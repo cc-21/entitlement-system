@@ -10,7 +10,7 @@ interface menuInfo{
   selector: 'app-header',
   standalone: false,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.less'
 })
 export class HeaderComponent {
   menuList:menuInfo[] = [

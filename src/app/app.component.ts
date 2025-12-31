@@ -6,7 +6,7 @@ import { LayoutModule } from './layout/layout.module';
   selector: 'app-root',
   imports: [RouterOutlet,LayoutModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.less'
 })
 export class AppComponent {
   title = 'entitlement-system';

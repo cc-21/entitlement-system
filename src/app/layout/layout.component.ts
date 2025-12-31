@@ -4,7 +4,7 @@ import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/co
   selector: 'app-layout',
   standalone: false,
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrl: './layout.component.less'
 })
 export class LayoutComponent {
   version:string = '0.0.1'
