@@ -15,5 +15,20 @@
 
   </ng-template>
   </nz-content>
-  <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  <nz-footer>
+    <app-footer>
+      Ant Design ©2020 Implement By Angular
+      <ng-container ngProjectAs="header">
+        <header>
+          header
+        </header>
+      </ng-container>
+      <content>
+        content
+      </content>
+      <footer>
+        footer
+      </footer>
+    </app-footer>
+  </nz-footer>
 </nz-layout>
