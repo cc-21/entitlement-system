@@ -3,8 +3,8 @@
 <ng-container *ngFor="let item of menuList">
   <a nz-dropdown [nzDropdownMenu]="menu" *ngIf="item.list else showTemplate" class="menu-title">
     {{item.name}}
-    <span nz-icon nzType="caret-down" nzTheme="outline"></span>
-     <!-- <span nz-icon nzType="bar-chart" nzTheme="outline"></span> -->
+    <!-- <span nz-icon nzType="caret-down" nzTheme="outline"></span> -->
+     <span nz-icon nzType="bar-chart" nzTheme="outline"></span>
   </a>
 
   <nz-dropdown-menu #menu="nzDropdownMenu">
