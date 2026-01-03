@@ -1,3 +1,4 @@
+import { ThemeService } from './../../services/theme.service';
 import { Component } from '@angular/core';
 
 interface menuInfo{
@@ -84,4 +85,11 @@ export class HeaderComponent {
     },
   ]
 
+  constructor(private themeService: ThemeService) {
+
+  }
+
+  changeTheme() {
+    this.themeService.toggleTheme()
+  }
 }
