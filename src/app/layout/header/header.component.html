@@ -20,5 +20,11 @@
   </ng-template>
 </ng-container>
 
-<span style="color: white; margin-right: 8px;" (click)="changeTheme('default')">default</span>
-<span style="color: white;" (click)="changeTheme('dark')">dark</span>
+<nz-avatar nz-dropdown [nzDropdownMenu]="theme" [nzSize]="45" class="header-avatar" nzSrc="https://www.sikiedu.com/files/default/2019/08-06/222854637f91628894.jpg"></nz-avatar>
+
+<nz-dropdown-menu #theme="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item (click)="changeTheme('default')">default theme</li>
+    <li nz-menu-item (click)="changeTheme('dark')">dark theme</li>
+  </ul>
+</nz-dropdown-menu>
