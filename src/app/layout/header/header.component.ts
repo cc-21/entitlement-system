@@ -89,7 +89,8 @@ export class HeaderComponent {
 
   }
 
-  changeTheme() {
-    this.themeService.toggleTheme()
+  changeTheme(theme:string) {
+    localStorage.setItem('theme', theme)
+    this.themeService.change()
   }
 }

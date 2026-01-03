@@ -60,4 +60,12 @@ export class ThemeService {
     this.currentTheme = this.reverseTheme(this.currentTheme);
     return this.loadTheme(false);
   }
+
+  change(){
+    const key = localStorage.getItem('theme');
+    if(this.currentTheme !== key) {
+      this.toggleTheme();
+    }
+  }
+
 }

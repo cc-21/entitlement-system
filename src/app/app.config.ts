@@ -1,4 +1,5 @@
-import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
+import { ThemeService } from './services/theme.service';
+import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom, APP_INITIALIZER } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -16,6 +17,19 @@ const icons: IconDefinition[] = [BarChartOutline]
 
 registerLocaleData(en);
 
+export function loadTheme(themeService:ThemeService): Function {
+  return () => {
+    themeService.change();
+  }
+}
+
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient(),provideNzIcons(icons)]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient(),provideNzIcons(icons),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loadTheme,
+      deps: [ThemeService],
+      multi: true
+    }
+  ]
 };
