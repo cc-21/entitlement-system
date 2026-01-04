@@ -68,7 +68,7 @@ export class HeaderComponent {
         },
         {
           name:'微信小程序 A计划（永久）',
-          path:'/wx-aplan'
+          path:'/class'
         },
         {
           name:'微信小程序学习路线',
@@ -96,7 +96,7 @@ export class HeaderComponent {
   }
 
   goToPage(path:string) {
-    this.router.navigate(['/wx-aplan'], {queryParams:{name:'frontend', type:'all'}})
+    this.router.navigate(['/class'], {queryParams:{name:'frontend', type:'all'}})
     // this.router.navigateByUrl(path)
   }
 
