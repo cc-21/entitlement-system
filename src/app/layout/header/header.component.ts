@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ThemeService } from './../../services/theme.service';
 import { Component } from '@angular/core';
 
@@ -85,7 +86,7 @@ export class HeaderComponent {
     },
   ]
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
 
   }
 
@@ -93,4 +94,10 @@ export class HeaderComponent {
     localStorage.setItem('theme', theme)
     this.themeService.change()
   }
+
+  goToPage(path:string) {
+    this.router.navigate(['/wx-aplan'], {queryParams:{name:'frontend', type:'all'}})
+    // this.router.navigateByUrl(path)
+  }
+
 }

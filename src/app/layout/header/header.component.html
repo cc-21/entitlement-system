@@ -9,12 +9,13 @@
 
   <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu nzSelectable>
-        <li nz-menu-item *ngFor="let child of item.list" [routerLink]="child.path">{{child.name}}</li>
+        <li nz-menu-item *ngFor="let child of item.list" (click)="goToPage(child.path)">{{child.name}}</li>
+        <!-- <li nz-menu-item *ngFor="let child of item.list" routerLink="/wx-aplan" [queryParams]="{name: 'weixin program', type: 'A plan'}">{{child.name}}</li> -->
       </ul>
   </nz-dropdown-menu>
 
   <ng-template #showTemplate>
-    <a class="menu-title" [routerLink]="item.path" [routerLinkActive]="['router-link-active']">
+    <a class="menu-title" [routerLink]="item.path">
       {{item.name}}
     </a>
   </ng-template>
