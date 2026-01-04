@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-plan',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './plan.component.html',
   styleUrl: './plan.component.less'
 })

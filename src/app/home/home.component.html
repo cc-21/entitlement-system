@@ -1,1 +1,8 @@
-<p>home works!</p>
+<nz-carousel nzAutoPlay>
+  @for (item of list; track item; let idx = $index) {
+    <p> {{idx}}</p>
+    <div nz-carousel-content>
+      <img [src]="item.src">
+    </div>
+  }
+</nz-carousel>

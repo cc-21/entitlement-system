@@ -68,7 +68,7 @@ export class HeaderComponent {
         },
         {
           name:'微信小程序 A计划（永久）',
-          path:'/plan/1'
+          path:'/plan/1/introduction'
         },
         {
           name:'微信小程序学习路线',
