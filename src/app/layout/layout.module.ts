@@ -7,11 +7,13 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   imports: [
-    CommonModule, NzLayoutModule, NzDropDownModule, NzIconModule, NzAvatarModule
-  ],
+    CommonModule, NzLayoutModule, NzDropDownModule, NzIconModule, NzAvatarModule,
+    RouterModule
+],
   declarations: [LayoutComponent,HeaderComponent,FooterComponent],
   exports: [LayoutComponent]
 })
