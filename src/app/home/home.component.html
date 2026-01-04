@@ -1,6 +1,5 @@
 <nz-carousel nzAutoPlay>
-  @for (item of list; track item; let idx = $index) {
-    <p> {{idx}}</p>
+  @for (item of list; track item) {
     <div nz-carousel-content>
       <img [src]="item.src">
     </div>
