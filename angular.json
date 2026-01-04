@@ -45,6 +45,11 @@
                 "inject": false
               }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/themes"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -107,11 +112,6 @@
             "scripts": []
           }
         }
-      },
-      "stylePreprocessorOptions": {
-        "includePaths": [
-          "src/styles/themes"
-        ]
       }
     }
   }
