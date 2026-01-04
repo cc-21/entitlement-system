@@ -7,16 +7,5 @@ import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/co
   styleUrl: './layout.component.less'
 })
 export class LayoutComponent {
-  version:string = '0.0.1'
 
-  @ViewChild('ref')
-  ref!:TemplateRef<any>
-
-  @ViewChild('ref', {read:ViewContainerRef})
-  refContainer!:ViewContainerRef
-
-  ngAfterViewInit(){
-    const view = this.ref.createEmbeddedView(null)
-    this.refContainer.insert(view)
-  }
 }
