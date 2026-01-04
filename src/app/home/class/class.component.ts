@@ -16,7 +16,7 @@ export class ClassComponent {
 
   constructor(public router:ActivatedRoute) {
     this.router.queryParams.subscribe((params:classInfo) => {
-      console.log(params.name)
+      console.log(params)
     })
   }
 }
