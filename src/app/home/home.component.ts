@@ -3,10 +3,11 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule],
+  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
@@ -121,5 +122,6 @@ export class HomeComponent {
     },
   ];
   selectIndex:number = 0;
-  options=['最新', '最热', '推荐']
+  options=['最新', '最热', '推荐'];
+  index:number = 1;
 }

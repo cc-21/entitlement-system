@@ -18,7 +18,8 @@
       }
     </div>
     <div nz-col class="gutter-row" [nzSpan]="4">
-      <nz-segmented [nzOptions]="options"></nz-segmented>
+      <!-- ngModel needs FormsModule -->
+      <nz-segmented [nzOptions]="options" [(ngModel)]="index"></nz-segmented>
     </div>
   </div>
 
