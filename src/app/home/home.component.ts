@@ -4,10 +4,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FormsModule } from '@angular/forms';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzFlexModule } from 'ng-zorro-antd/flex';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-home',
-  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule],
+  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCardModule,NzFlexModule,NzIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
@@ -124,4 +127,27 @@ export class HomeComponent {
   selectIndex:number = 0;
   options=['最新', '最热', '推荐'];
   index:number = 1;
+  courseInfo:any[] | undefined = [];
+
+  handleSelect(i:number, array?:any[]) {
+    this.selectIndex = i;
+    this.courseInfo = array;
+  }
+
+  constructor() {
+    this.courseInfo = this.courseList[0].children
+    console.log(1)
+  }
+
+  ngOnInit() {
+    console.log(3)
+  }
+
+  ngOnChanges() {
+    console.log(2)
+  }
+
+  ngOnDestroy() {
+    console.log(4)
+  }
 }

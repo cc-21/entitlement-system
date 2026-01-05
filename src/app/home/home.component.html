@@ -1,4 +1,4 @@
-<nz-carousel nzAutoPlay>
+<nz-carousel nzAutoPlay style="height: 450px;">
   @for (item of list; track item) {
     <div nz-carousel-content>
       <img [src]="item.src">
@@ -14,7 +14,7 @@
     <div nz-col class="gutter-row" [nzSpan]="20">
       @for (item of courseList; track item; let idx = $index) {
         <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type':''"
-        (click)="selectIndex=idx">{{item.type}}</button>
+        (click)="handleSelect(idx, item.children)">{{item.type}}</button>
       }
     </div>
     <div nz-col class="gutter-row" [nzSpan]="4">
@@ -23,5 +23,24 @@
     </div>
   </div>
 
-</div>
+  <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
+    @for(course of courseInfo; track course) {
+      <nz-card nzHoverable style="width:264px" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit]">
+        <nz-card-meta [nzTitle]="course.name"></nz-card-meta>
+      </nz-card>
 
+      <ng-template #coverTemplate>
+        <img [src]="course.url" />
+      </ng-template>
+      <ng-template #actionSetting>
+        <nz-icon nzType="usergroup-delete" nzTheme="outline" />
+        <span>{{course.count}}</span>
+        <nz-icon nzType="comment" nzTheme="outline" />
+        <span>{{course.comments}}</span>
+      </ng-template>
+      <ng-template #actionEdit>
+        <span [style.color]="course.isFree?'#43bc60':'#ed3e3e'">{{course.isFree?'免费':course.price}}</span>
+      </ng-template>
+    }
+  </div>
+</div>
