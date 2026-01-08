@@ -8,6 +8,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CardComponent } from '../component/card/card.component';
+import { CountService } from '../services/count.service';
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,10 @@ import { CardComponent } from '../component/card/card.component';
 })
 export class HomeComponent {
 
-  // @ViewChild(CardComponent) child: CardComponent | undefined
+  // @ViewChild(CardComponent) child!: CardComponent
   // @ViewChild('child') child: any
 
-  @ViewChildren('child') child!: QueryList<ElementRef>
+  // @ViewChildren('child') child!: QueryList<ElementRef>
 
   array = [1, 2, 3, 4];
   list = [
@@ -141,7 +142,7 @@ export class HomeComponent {
     this.courseInfo = array;
   }
 
-  constructor() {
+  constructor(private count: CountService) {
     this.courseInfo = this.courseList[0].children
   }
 
@@ -164,8 +165,7 @@ export class HomeComponent {
   }
 
   add() {
-    console.log(this.child)
+    this.count.addCount()
     // this.child?.addCount()
-
   }
 }

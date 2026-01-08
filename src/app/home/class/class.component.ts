@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CountService } from '../../services/count.service';
 
 interface classInfo{
   name?:string,
@@ -14,9 +15,13 @@ interface classInfo{
 })
 export class ClassComponent {
 
-  constructor(public router:ActivatedRoute) {
+  constructor(public router:ActivatedRoute, private count: CountService) {
     this.router.queryParams.subscribe((params:classInfo) => {
       console.log(params)
     })
+  }
+
+  addOne() {
+    this.count.addCount()
   }
 }
