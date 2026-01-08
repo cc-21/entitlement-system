@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
@@ -16,6 +16,10 @@ import { CardComponent } from '../component/card/card.component';
   styleUrl: './home.component.less'
 })
 export class HomeComponent {
+
+  @ViewChild(CardComponent) child: CardComponent | undefined
+
+
   array = [1, 2, 3, 4];
   list = [
     {
@@ -137,11 +141,12 @@ export class HomeComponent {
 
   constructor() {
     this.courseInfo = this.courseList[0].children
-    console.log(1)
   }
 
   ngOnInit() {
-    console.log(3)
+  }
+
+  ngAfterViewInit() {
   }
 
   ngOnChanges() {
@@ -154,5 +159,9 @@ export class HomeComponent {
 
   getMessage(e:any){
     console.log(e)
+  }
+
+  add() {
+    this.child?.addCount()
   }
 }

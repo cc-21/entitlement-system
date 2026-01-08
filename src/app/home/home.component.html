@@ -25,7 +25,7 @@
 
   <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
     @for(course of courseInfo; track course) {
-      <button (click)="child.addCount()">计时器</button>
+      <button (click)="add()">计时器</button>
       <app-card [courseObj]="course" (messageEvent)="getMessage($event)"#child></app-card>
     }
   </div>
