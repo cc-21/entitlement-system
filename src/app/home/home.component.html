@@ -7,13 +7,13 @@
 </nz-carousel>
 
 <div class="home-content">
-  <h2>网校课程</h2>
-  <h4>精选网校课程，满足你的学习兴趣</h4>
+  <h2 class="text-center">网校课程</h2>
+  <h4 class="text-center">精选网校课程，满足你的学习兴趣</h4>
 
   <div nz-row [nzGutter]="16">
     <div nz-col class="gutter-row" [nzSpan]="20">
       @for (item of courseList; track item; let idx = $index) {
-        <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type':''"
+        <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type bg':''"
         (click)="handleSelect(idx, item.children)">{{item.type}}</button>
       }
     </div>
