@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
@@ -18,7 +18,9 @@ import { CardComponent } from '../component/card/card.component';
 export class HomeComponent {
 
   // @ViewChild(CardComponent) child: CardComponent | undefined
-  @ViewChild('child') child: any
+  // @ViewChild('child') child: any
+
+  @ViewChildren('child') child!: QueryList<ElementRef>
 
   array = [1, 2, 3, 4];
   list = [
@@ -163,6 +165,7 @@ export class HomeComponent {
 
   add() {
     console.log(this.child)
-    this.child?.addCount()
+    // this.child?.addCount()
+
   }
 }
