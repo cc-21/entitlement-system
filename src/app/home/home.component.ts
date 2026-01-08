@@ -9,10 +9,12 @@ import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CardComponent } from '../component/card/card.component';
 import { CountService } from '../services/count.service';
+import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
+import { CountPipe } from '../component/pipe/count.pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCardModule,NzFlexModule,NzIconModule,CardComponent],
+  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCardModule,NzFlexModule,NzIconModule,CardComponent,CommonModule,CountPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
