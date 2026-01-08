@@ -25,7 +25,7 @@
 
   <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
     @for(course of courseInfo; track course) {
-      <nz-card nzHoverable style="width:264px" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit]">
+      <nz-card nzHoverable style="width:264px" [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
         <nz-card-meta [nzTitle]="course.name"></nz-card-meta>
       </nz-card>
 
@@ -35,25 +35,20 @@
 
 
         <ng-template #actionSetting>
-          <div style="display: flex; width: 100%;">
-            <div class="meta-title">
+          <div nz-row [nzGutter]="16">
+            <div nz-col class="gutter-row" [nzSpan]="8">
               <nz-icon style="margin-left:10px" nzType="usergroup-delete" nzTheme="outline" />
               <span>{{course.count}}</span>
             </div>
-            <div class="meta-title">
+            <div nz-col class="gutter-row" [nzSpan]="8">
               <nz-icon style="margin-left:10px" nzType="comment" nzTheme="outline" />
               <span>{{course.comments}}</span>
             </div>
+            <div nz-col class="gutter-row" [nzSpan]="8">
+              <span [style.color]="course.isFree?'#43bc60':'#ed3e3e'" class="price-title">{{course.isFree?'免费':course.price}}</span>
+            </div>
           </div>
-
-
       </ng-template>
-
-      <ng-template #actionEdit>
-        <span [style.color]="course.isFree?'#43bc60':'#ed3e3e'" class="price-title">{{course.isFree?'免费':course.price}}</span>
-      </ng-template>
-
-
     }
   </div>
 </div>
