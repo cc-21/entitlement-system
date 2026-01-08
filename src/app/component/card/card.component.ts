@@ -13,8 +13,14 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 export class CardComponent {
   @Input() courseObj: any = {}
   @Output() messageEvent = new EventEmitter<any>()
+  count:number = 0
 
   sendMessage() {
     this.messageEvent.emit('this is an output message')
+  }
+
+  addCount() {
+    this.count++
+    console.log(this.count)
   }
 }
