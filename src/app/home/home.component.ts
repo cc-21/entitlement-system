@@ -7,10 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CardComponent } from '../component/card/card.component';
 
 @Component({
   selector: 'app-home',
-  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCardModule,NzFlexModule,NzIconModule],
+  imports: [NzCarouselModule, NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCardModule,NzFlexModule,NzIconModule,CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
@@ -149,5 +150,9 @@ export class HomeComponent {
 
   ngOnDestroy() {
     console.log(4)
+  }
+
+  getMessage(e:any){
+    console.log(e)
   }
 }

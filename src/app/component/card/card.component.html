@@ -1,0 +1,23 @@
+<nz-card nzHoverable style="width:264px" [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
+  <nz-card-meta [nzTitle]="courseObj.name"></nz-card-meta>
+</nz-card>
+
+<ng-template #coverTemplate>
+  <img [src]="courseObj.url" style="padding: 6px;" (click)="sendMessage()"/>
+</ng-template>
+
+<ng-template #actionSetting>
+  <div nz-row [nzGutter]="16">
+    <div nz-col class="gutter-row" [nzSpan]="8">
+      <nz-icon style="margin-left:10px" nzType="usergroup-delete" nzTheme="outline" />
+      <span>{{courseObj.count}}</span>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="8">
+      <nz-icon style="margin-left:10px" nzType="comment" nzTheme="outline" />
+      <span>{{courseObj.comments}}</span>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="8">
+      <span [style.color]="courseObj.isFree?'#43bc60':'#ed3e3e'" class="price-title">{{courseObj.isFree?'免费':courseObj.price}}</span>
+    </div>
+  </div>
+</ng-template>
