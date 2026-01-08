@@ -17,7 +17,7 @@
       <span>{{courseObj.comments}}</span>
     </div>
     <div nz-col class="gutter-row" [nzSpan]="8">
-      <span [style.color]="courseObj.isFree?'#43bc60':'#ed3e3e'" class="price-title">{{courseObj.isFree?'免费':courseObj.price}}</span>
+      <span [style.color]="courseObj.isFree?'#43bc60':'#ed3e3e'" class="price-title">{{courseObj.isFree?'免费':courseObj.price | count}}</span>
     </div>
   </div>
 </ng-template>
