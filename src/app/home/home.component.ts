@@ -17,8 +17,8 @@ import { CardComponent } from '../component/card/card.component';
 })
 export class HomeComponent {
 
-  @ViewChild(CardComponent) child: CardComponent | undefined
-
+  // @ViewChild(CardComponent) child: CardComponent | undefined
+  @ViewChild('child') child: any
 
   array = [1, 2, 3, 4];
   list = [
@@ -162,6 +162,7 @@ export class HomeComponent {
   }
 
   add() {
+    console.log(this.child)
     this.child?.addCount()
   }
 }
