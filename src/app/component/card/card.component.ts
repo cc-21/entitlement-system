@@ -4,6 +4,7 @@ import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CountPipe } from '../pipe/count.pipe';
+import { Child } from './course';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +13,7 @@ import { CountPipe } from '../pipe/count.pipe';
   styleUrl: './card.component.less'
 })
 export class CardComponent {
-  @Input() courseObj: any = {}
+  @Input() courseObj!: Child
   @Output() messageEvent = new EventEmitter<any>()
 
   sendMessage() {

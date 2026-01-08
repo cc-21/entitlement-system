@@ -11,6 +11,7 @@ import { CardComponent } from '../component/card/card.component';
 import { CountService } from '../services/count.service';
 import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { CountPipe } from '../component/pipe/count.pipe';
+import { Child, Course } from '../component/card/course';
 
 @Component({
   selector: 'app-home',
@@ -50,7 +51,7 @@ export class HomeComponent {
     },
   ];
 
-  courseList:any[] = [
+  courseList:Course[] = [
     {
       type:'全部课程',
       children:[
@@ -137,15 +138,15 @@ export class HomeComponent {
   selectIndex:number = 0;
   options=['最新', '最热', '推荐'];
   index:number = 1;
-  courseInfo:any[] | undefined = [];
-
-  handleSelect(i:number, array?:any[]) {
-    this.selectIndex = i;
-    this.courseInfo = array;
-  }
+  courseInfo:Child[] = [];
 
   constructor(private count: CountService) {
-    this.courseInfo = this.courseList[0].children
+    this.courseInfo = this.courseList[0].children? this.courseList[0].children:[]
+  }
+
+  handleSelect(i:number, array?:Child[]) {
+    this.selectIndex = i;
+    this.courseInfo = array?array:[];
   }
 
   ngOnInit() {

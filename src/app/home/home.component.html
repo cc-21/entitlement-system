@@ -13,7 +13,7 @@
   <div nz-row [nzGutter]="16">
     <div nz-col class="gutter-row" [nzSpan]="20">
       @for (item of courseList; track item; let idx = $index) {
-        <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type bg':''"
+        <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type':''"
         (click)="handleSelect(idx, item.children)">{{item.type}}</button>
       }
     </div>
@@ -22,8 +22,6 @@
       <nz-segmented [nzOptions]="options" [(ngModel)]="index"></nz-segmented>
     </div>
   </div>
-
-  <button (click)="add()">计时器</button>
   <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
     @for(course of courseInfo; track course) {
       <app-card [courseObj]="course" (messageEvent)="getMessage($event)"#child></app-card>
